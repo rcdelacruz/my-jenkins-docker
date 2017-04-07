@@ -1,10 +1,10 @@
 FROM openjdk:8-jdk
 
-RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git curl nodejs && rm -rf /var/lib/apt/lists/*
 
 # install latest Node.js and npm
 # https://gist.github.com/isaacs/579814#file-node-and-npm-in-30-seconds-sh
-RUN apt-get install nodejs 
+#RUN apt-get install nodejs 
 RUN curl https://www.npmjs.org/install.sh | sh
 
 ENV JENKINS_HOME /var/jenkins_home
