@@ -4,10 +4,10 @@ RUN apt-get update && apt-get install -y git g++ python make curl && rm -rf /var
 
 # install latest Node.js and npm
 # https://gist.github.com/isaacs/579814#file-node-and-npm-in-30-seconds-sh
-RUN mkdir ~/node-latest-install && cd $_ && \
-RUN curl http://nodejs.org/dist/v6.10.2/node-v6.10.2.tar.gz | tar xz --strip-components=1 && \
-RUN make install && \ # takes a few minutes to build...
-RUN curl https://www.npmjs.org/install.sh | sh
+RUN mkdir ~/node-latest-install && cd $_ && \ 
+curl http://nodejs.org/dist/v6.10.2/node-v6.10.2.tar.gz | tar xz --strip-components=1 && \
+make install && \ # takes a few minutes to build...
+curl https://www.npmjs.org/install.sh | sh
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
