@@ -5,8 +5,8 @@ RUN apt-get update && apt-get install -y git curl nodejs && rm -rf /var/lib/apt/
 # install latest Node.js and npm
 # https://gist.github.com/isaacs/579814#file-node-and-npm-in-30-seconds-sh
 #RUN apt-get install nodejs 
-RUN wget https://www.npmjs.org/install.sh 
-RUN sh install.sh
+#RUN wget https://www.npmjs.org/install.sh 
+#RUN sh install.sh
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
