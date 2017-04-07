@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y git g++ python make curl && rm -rf /var
 # https://gist.github.com/isaacs/579814#file-node-and-npm-in-30-seconds-sh
 RUN mkdir ~/node-latest-install && cd $_ && \ 
 curl http://nodejs.org/dist/v6.10.2/node-v6.10.2.tar.gz | tar xz --strip-components=1 && \
-make install && \ # takes a few minutes to build...
+./configure && make install && \ # takes a few minutes to build...
 curl https://www.npmjs.org/install.sh | sh
 
 ENV JENKINS_HOME /var/jenkins_home
