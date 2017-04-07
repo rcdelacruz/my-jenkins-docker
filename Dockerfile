@@ -1,10 +1,6 @@
 FROM openjdk:8-jdk
 
-RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
-
-# update and install all required packages (no sudo required as root)
-# https://gist.github.com/isaacs/579814#file-only-git-all-the-way-sh
-RUN apt-get install -yq g++ libssl-dev python make nano
+RUN apt-get update && apt-get install -y git g++ python make curl && rm -rf /var/lib/apt/lists/*
 
 # install latest Node.js and npm
 # https://gist.github.com/isaacs/579814#file-node-and-npm-in-30-seconds-sh
